@@ -13,15 +13,17 @@ jobs:
 
         steps:
             - name: Checkout code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
             
             - name: Setup Node.js
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v4
               with:
                 node-version: 20
             - name: Install dependencies
               working-directory: vitest-testing
-              run: npm install && npx prisma generate
+              run: | 
+                    npm install 
+                    npx prisma generate
             
             - name: Run tests
               working-directory: vitest-testing
