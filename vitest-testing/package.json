@@ -1,0 +1,24 @@
+{
+  "name": "vitest-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/supertest": "^7.2.0",
+    "express": "^5.2.1",
+    "prisma": "^5.22.0",
+    "supertest": "^7.2.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.0",
+    "vitest-mock-extended": "^3.1.0"
+  }
+}
