@@ -16,8 +16,12 @@ app.post("/sum",async(req,res)=>{
             message:"Incorrect inputs"
         })
     }
+    
     const a = parsedInput.data.a;
     const b = parsedInput.data.b;
+    if(a > 10E8 || b > 10E8){
+        return res.status(422).json({message: "Numbers can't be too large"});
+    }
     const answer = a + b;
 
     const sum = await prismaClient.sum.create({

@@ -33,6 +33,16 @@ describe("POST /sum", () => {
     expect(res.body.id).toBe(1);
   });
 
+  it("should return the sum of two numbers",async()=>{
+    const res = await request(app).post("/sum").send({
+      a: 10E10,
+      b:1
+    })
+
+    expect(res.statusCode).toBe(422);
+    expect(res.body.message).toBe("Numbers can't be too large")
+  });
+
   it("should return the sum of two numbers", async () => {
     const res = await request(app)
       .post("/sum")
